@@ -1,3 +1,4 @@
+using MyTestWokerService;
 using System.Diagnostics;
 using System.Text;
 
@@ -6,13 +7,13 @@ namespace WorkerService1
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
+        private readonly WriteLogFile _writeLogFile;
 
-        public Worker(ILogger<Worker> logger)
+        public Worker(ILogger<Worker> logger, WriteLogFile writeLogFile)
         {
             _logger = logger;
+            _writeLogFile = writeLogFile;
         }
-
-
         #region private method
 
         void RunCmd(string cmdstr)
@@ -57,19 +58,32 @@ namespace WorkerService1
         }
 
         #endregion private method
-
+        //启动是执行
+        public override async Task StartAsync(CancellationToken cancellationToken)
+        {
+            _writeLogFile.WriteLog("启动时间为: " + DateTimeOffset.Now);
+            await base.StartAsync(cancellationToken);
+        }
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                string path = System.Environment.CurrentDirectory;
-                _logger.LogInformation("Worker running at: {time} {path}", DateTimeOffset.Now, path);
+                _writeLogFile.WriteLog("执行时间为: " + DateTimeOffset.Now);
+                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
 
-                string command = "ConsoleApp1";
-                RunCmd(command);
-                await Task.Delay(1000, stoppingToken);
-
+                var cmd = "D:\\source\\WorkerService1\\WorkerService1\\bin\\Release\\net6.0\\publish\\ConsoleApp1.exe";
+                RunCmd(cmd);
+                await Task.Delay(5000, stoppingToken);
             }
+        }
+
+        //停止时执行
+        public override async Task StopAsync(CancellationToken cancellationToken)
+        {
+            _writeLogFile.WriteLog("停止时间为: " + DateTimeOffset.Now);
+            await base.StopAsync(cancellationToken);
         }
     }
 }
+
+

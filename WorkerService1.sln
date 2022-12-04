@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerService1", "WorkerService1\WorkerService1.csproj", "{187A2407-256F-49E9-A851-6B05750C5CC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkerService1", "WorkerService1\WorkerService1.csproj", "{187A2407-256F-49E9-A851-6B05750C5CC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{976FE59C-52CA-488F-9EB1-5B8A9A13951D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{976FE59C-52CA-488F-9EB1-5B8A9A13951D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleRunner", "ConsoleRunner\ConsoleRunner.csproj", "{45A6E24B-1B05-4E80-ACCE-26ECA77FCE78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleRunner", "ConsoleRunner\ConsoleRunner.csproj", "{45A6E24B-1B05-4E80-ACCE-26ECA77FCE78}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{A05DEABC-D534-4919-A9EA-4A633E4EC8F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,8 @@ Global
 		{45A6E24B-1B05-4E80-ACCE-26ECA77FCE78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45A6E24B-1B05-4E80-ACCE-26ECA77FCE78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45A6E24B-1B05-4E80-ACCE-26ECA77FCE78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A05DEABC-D534-4919-A9EA-4A633E4EC8F5}.Debug|Any CPU.ActiveCfg = Debug
+		{A05DEABC-D534-4919-A9EA-4A633E4EC8F5}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

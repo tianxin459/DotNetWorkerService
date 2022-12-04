@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Text;
 
 Console.WriteLine("running");
-var dir = new DirectoryInfo("logfiles");
+var dir = new DirectoryInfo("c:/_logfiles");
 if(!dir.Exists)dir.Create();
 var filename = DateTime.UtcNow.ToFileTime();
 var filePath = $"{dir}/{filename}";
