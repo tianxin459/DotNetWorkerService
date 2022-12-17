@@ -68,7 +68,9 @@ namespace WorkerService1
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                _writeLogFile.WriteLog("执行时间为: " + DateTimeOffset.Now);
+                var path = Environment.GetEnvironmentVariable("SCM_Path2", EnvironmentVariableTarget.Machine);
+                var pathUser = Environment.GetEnvironmentVariable("SCM_Path2", EnvironmentVariableTarget.User);
+                _writeLogFile.WriteLog("执行时间为: " + DateTimeOffset.Now+ $"###|env={path}|env2={pathUser}|###");
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
 
                 var cmd = "D:\\source\\WorkerService1\\WorkerService1\\bin\\Release\\net6.0\\publish\\ConsoleApp1.exe";

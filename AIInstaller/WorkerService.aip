@@ -242,6 +242,8 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiEnvComponent">
     <ROW Environment="Path" Name="=-Path" Value="[~];[APPDIR]\publish" Component_="ProductInformation"/>
+    <ROW Environment="SCM_Path2" Name="=-*SCM_Path2" Value="TestAgain lalala" Component_="WorkerService1.exe"/>
+    <ROW Environment="SCM_Path2_1" Name="=-SCM_Path2" Value="No SystemVal" Component_="WorkerService1.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
